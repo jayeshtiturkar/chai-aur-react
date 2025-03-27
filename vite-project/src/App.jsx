@@ -1,30 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import Cart from './Componant/Card'
 function App() {
-  const [count, setCount] = useState(0)
-  const addCount = () =>{
-    if(count == 20){
-      alert("Counter Limit Reached")
-      return
-    }
-    setCount(count + 1)
-  }
-  const removeCount = () =>{
-    if(count == 0){
-      alert("Counter Limit Reached")
-      return
-    }
-    setCount(count - 1)
-  }
   return (
    <>
-   <h1>Counter Machine : {count}</h1>
-   <button onClick={addCount}>Add Count </button>
-   <button onClick={removeCount}> Remove Count</button>
-
+   <h1 className='bg-yellow-300 mb-4 rounded-xl'>This is Cart</h1>
+    <Cart name="Jayesh"/>
    </>
   )
 }
