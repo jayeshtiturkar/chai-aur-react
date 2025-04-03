@@ -9,14 +9,12 @@ const AddTodo = () => {
     const [input2, setInput2] = useState("")
     const [iseditable2, useIseditable2] = useState(false)
     const dispatch = useDispatch()
-    const [inId, setInID] = useState("")
 
 
     useEffect(() => {
         useIseditable2(edit.iseditable)
         setInput2(edit.text)
-        setInID(edit.id)
-    }, [edit.iseditable,edit.id,edit.text,edit]);
+    }, [edit]);
 
     const addTodoHandler = (e) => {
         e.preventDefault()
