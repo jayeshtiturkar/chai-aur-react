@@ -16,19 +16,19 @@ const AddTodo = () => {
         useIseditable2(edit.iseditable)
         setInput2(edit.text)
         setInID(edit.id)
-    }, [edit.iseditable,edit.id]);
+    }, [edit.iseditable,edit.id,edit.text,edit]);
 
     const addTodoHandler = (e) => {
         e.preventDefault()
         if (input1 == "") return;
-        dispatch(addTodo(input1))
-        setInput1("")
+        dispatch(addTodo({todotext : input1, iseditable : true}))
+        setInput1("")   
     }
 
     const updateHandler = (e) => {
         e.preventDefault()
         if (input2 == "") return;
-        dispatch(updateTodo({id : edit.id, todotext : input2}))
+        dispatch(updateTodo({id : edit.id, todotext : input2, iseditable : true}))
         setInput2("")
         useIseditable2(false)
     }

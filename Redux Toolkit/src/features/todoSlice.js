@@ -4,7 +4,8 @@ const initialState = {
     todos: [
         {
             id: 1,
-            todotext: "Hello Word"
+            todotext: "Hello Word",
+            iseditable : true
         }
     ]
 }
@@ -15,9 +16,11 @@ export const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
+            const {todotext,iseditable} = action.payload
             const todo = {
                 id: nanoid(),
-                todotext: action.payload
+                todotext: todotext,
+                iseditable : iseditable
             }
             state.todos.push(todo)
         },

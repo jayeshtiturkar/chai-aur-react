@@ -21,7 +21,7 @@ const TodoList = () => {
                         <div className='text-white'>{todo.todotext}</div>
                         <div className="flex">
                             <button
-                                onClick={() => setEdit({text : todo.todotext, id: todo.id, iseditable : true})}
+                                onClick={() => setEdit({text : todo.todotext, id: todo.id, iseditable : todo.iseditable})}
                                 className="bg-blue-500 hover:bg-blue-700 mr-5 text-white font-bold flex justify-end py-2 px-4 rounded-full">
                                 Edit
                             </button>
